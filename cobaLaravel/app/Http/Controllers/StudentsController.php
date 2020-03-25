@@ -15,6 +15,7 @@ class StudentsController extends Controller
     public function index()
     {
         $students = Student::all();
+        // pake compact soalnya dah sama nama yg dipake
         return view('students.index', compact('students'));
         //
     }

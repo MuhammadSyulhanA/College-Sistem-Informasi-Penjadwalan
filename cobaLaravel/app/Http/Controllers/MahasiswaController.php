@@ -27,6 +27,7 @@ class MahasiswaController extends Controller
         dump($mahasiswa);
 
         $mahasiswa = Student::all();
+        
         return view('mahasiswa/index', ['mahasiswa' => $mahasiswa]);
     }
 

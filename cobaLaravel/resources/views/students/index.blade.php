@@ -14,7 +14,8 @@
                     @foreach( $students as $students)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $students->nama }}
-                            <a href="" class="badge badge-info">detail</a>
+                            <!-- route model binding -->
+                            <a href="/students/{{ $students->id }}" class="badge badge-info">detail</a>
                         </li>
                     @endforeach
                 </ul>

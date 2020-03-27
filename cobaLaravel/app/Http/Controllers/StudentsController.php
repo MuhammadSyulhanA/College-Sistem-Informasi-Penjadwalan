@@ -50,7 +50,8 @@ class StudentsController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        // route model binding
+        return view('students.detail', compact('student'));
     }
 
     /**

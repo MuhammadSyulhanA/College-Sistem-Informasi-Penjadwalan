@@ -25,5 +25,8 @@ Route::get('/mahasiswa', 'MahasiswaController@index');
 
 //students
 Route::get('/students', 'StudentsController@index');
+Route::get('/students/create', 'StudentsController@create');
 // route model binding
 Route::get('/students/{student}', 'StudentsController@show');
+//buat nambah data pake method store, biar lebih secure
+Route::post('/students', 'StudentsController@store');

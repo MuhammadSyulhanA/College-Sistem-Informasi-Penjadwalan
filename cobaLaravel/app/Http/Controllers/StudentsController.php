@@ -28,7 +28,7 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -39,7 +39,18 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // cek datanya kekirim ato ndak
+        // return $request;
+        
+        $student = new Student;
+        $student->nama = $request->nama;
+        $student->nim = $request->nim;
+        $student->email = $request->email;
+        $student->jurusan = $request->jurusan;
+
+        $student->save();
+
+        return redirect('/students');
     }
 
     /**

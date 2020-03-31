@@ -42,13 +42,22 @@ class StudentsController extends Controller
         // cek datanya kekirim ato ndak
         // return $request;
         
-        $student = new Student;
-        $student->nama = $request->nama;
-        $student->nim = $request->nim;
-        $student->email = $request->email;
-        $student->jurusan = $request->jurusan;
+        // 1. cara pertama, tanpa model
+        // $student = new Student;
+        // $student->nama = $request->nama;
+        // $student->nim = $request->nim;
+        // $student->email = $request->email;
+        // $student->jurusan = $request->jurusan;
 
-        $student->save();
+        // $student->save();
+
+        // 2. cara kedua, pake model versi panjang
+        Student::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'email' => $request->email,
+            'jurusan' => $request->jurusan,
+        ]);
 
         return redirect('/students');
     }

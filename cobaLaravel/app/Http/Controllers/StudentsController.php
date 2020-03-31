@@ -58,11 +58,18 @@ class StudentsController extends Controller
         //     'email' => $request->email,
         //     'jurusan' => $request->jurusan,
         // ]);
-
+        
+        // buat validasi pas ngisi data di form, cek dokumentasi vaildate
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required|size:9',
+            'email' => 'required',
+            'jurusan' => 'required'    
+        ]);
         // 3. cara ketiga, sama kek kedua cm lbh pendek, all disini sesuai fillabe
         Student::create($request->all());
 
-        return redirect('/students');
+        return redirect('/students')->with('status', 'Data Berhasil Ditambahkan!');
     }
 
     /**

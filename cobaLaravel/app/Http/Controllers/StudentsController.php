@@ -52,12 +52,15 @@ class StudentsController extends Controller
         // $student->save();
 
         // 2. cara kedua, pake model versi panjang
-        Student::create([
-            'nama' => $request->nama,
-            'nim' => $request->nim,
-            'email' => $request->email,
-            'jurusan' => $request->jurusan,
-        ]);
+        // Student::create([
+        //     'nama' => $request->nama,
+        //     'nim' => $request->nim,
+        //     'email' => $request->email,
+        //     'jurusan' => $request->jurusan,
+        // ]);
+
+        // 3. cara ketiga, sama kek kedua cm lbh pendek, all disini sesuai fillabe
+        Student::create($request->all());
 
         return redirect('/students');
     }
